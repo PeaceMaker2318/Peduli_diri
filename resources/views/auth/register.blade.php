@@ -1,154 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{{asset('logins/fonts/icomoon/style.css')}}">
 
-  <title>Pages / Register - NiceAdmin Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <link rel="stylesheet" href="{{asset('logins/css/owl.carousel.min.css')}}">
 
-  <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-  <link href="{{asset('assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('logins/css/bootstrap.min.css')}}">
     
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('logins/css/style.css')}}">
 
-<body>
+    <title>Login | Peduli Diri</title>
+  </head>
+  <body>
+  
 
-  <main>
-    <div class="container">
-
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
+  
+  <div class="content">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{{asset('logins/images/undraw_remotely_2j6y.svg')}}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
           <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Registrasi</h3>
+              <p class="mb-4">buat akun mu dan dapatkan hadiah jutaan miliyar.</p>
+            </div>
+            <form class="row g-3 needs-validation" action="/storeregis" method="post">
+              @csrf
+             
 
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
-                </a>
-              </div><!-- End Logo -->
+            <div class="col-12 form-group first" >
+              <label for="yournik" class="form-label">Your nik</label>
+              <input type="number" name="nik" class="form-control" id="yournik" required>
+              <div class="invalid-feedback">Please, enter your nik!</div>
+            </div>
+            <div class="col-12 form-group first" >
+              <label for="yournik" class="form-label">Your name</label>
+              <input type="text" name="name" class="form-control" id="yournik" required>
+              <div class="invalid-feedback">Please, enter your nik!</div>
+            </div>
 
-              <div class="card mb-3">
 
-                <div class="card-body
-                ">
+            <div class="col-12 form-group first ">
+              <label for="yourEmail" class="form-label">Your Email</label>
+              <input type="email" name="email" class="form-control" id="yourEmail" required>
+              <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+            </div>
 
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                    <p class="text-center small">Enter your personal details to create account</p>
-                    @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            @endif
-                  </div>
-     
-                  <form class="row g-3 needs-validation" action="/storeregis" method="post">
+            
 
-                      @csrf
-                    <div class="col-12">
-                      <label for="yourName" class="form-label">Your Name</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, enter your name!</div>
-                    </div>
+            <div class="col-12 form-group first ">
+              <label for="yourPassword" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="yourPassword" required>
+              <div class="invalid-feedback">Please enter your password!</div>
+            </div>
 
-                    <div class="col-12">
-                      <label for="yournik" class="form-label">Your nik</label>
-                      <input type="text" name="nik" class="form-control" id="yournik" required>
-                      <div class="invalid-feedback">Please, enter your nik!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="yourEmail" class="form-label">Your Email</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
-                    </div>
-
-                    
-
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
-                    </div>
-
-                    
-                    <div class="col-12">
-                      <label for="">confirm Password</label>
-                    <input id="pasworsd-confirm" type="password" class="form-control" name="password_confirmation">
-                      </div>
-                    
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Already have an account? <a href="/login">Log in</a></p>
-                    </div>
-                  </form>
-
-                </div>
+            
+            <div class="col-12 form-group first ">
+              <label for="">confirm Password</label>
+            <input id="pasworsd-confirm" type="password" class="form-control" name="password_confirmation">
               </div>
-
-              <div class="credits">
-               
-              </div>
-
+            
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+            <div class="col-12 form-group first ">
+              <p class="small mb-0">Already have an account? <a href="/login">Log in</a></p>
+            </div>
+          </form>
             </div>
           </div>
+          
         </div>
-
-      </section>
-
+        
+      </div>
     </div>
-  </main><!-- End #main -->
+  </div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-   <!-- Vendor JS Files -->
-   <script src="{{asset ('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/chart.js/chart.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/echarts/echarts.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/quill/quill.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{asset ('assets/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{asset ('assets/vendor/php-email-form/validate.js')}}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{{asset ('assets/js/main.js')}}"></script>
-
-
-</body>
-
+  
+    <script src="{{asset('logins/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('logins/js/popper.min.js')}}"></script>
+    <script src="{{asset('logins/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('logins/js/main.js')}}"></script>
+  </body>
 </html>

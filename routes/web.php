@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.index');
 });
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
@@ -23,8 +23,12 @@ Route::get ('/home','AuthController@home');
 
 Route::group(['middleware'=>['auth','CheckRole:admin']],function()
 {
+    Route::get('/user','adminController@cari  ');    
     Route::get('/admin','adminController@index');    
     Route::get('/admin/delete/{id}','adminController@delete');
+    Route::get('/admin/ubahAdmin/{id}','adminController@ubahAdmin');
+    Route::get('/admin/ubahUser/{id}','adminController@ubahUser');
+    Route::get('/admin/cetak/hanyaUser_pdf', 'adminController@cetakHanyaUser');
     Route::get('/admin/cetak/user_pdf', 'adminController@cetakUser');
 });
 Route::group(['middleware'=>['auth','CheckRole:user']],function() {
@@ -34,5 +38,7 @@ Route::group(['middleware'=>['auth','CheckRole:user']],function() {
     Route::get('/perjalanan/delete/{id}','PerjalananController@delete');
     Route::get('/profile','userController@index');
     Route::post('/profile/edit/{id}','userController@update');
+    
+    Route::post('/changepassword/{id}','userController@changepassword');
     
 });

@@ -34,6 +34,12 @@
         <!-- End Messages Nav -->
 
         <li class="nav-item dropdown pe-4">
+        <li class="nav-item dropdown pe-4">
+              <a class="dropdown-item d-flex align-items-center" href="/home">
+                <i class="bx bx-home"></i>
+                <span>home</span>
+              </a>
+            </li>
         @if (auth()->user()->role == 'admin')
         <li class="nav-item dropdown pe-4">
               <a class="dropdown-item d-flex align-items-center" href="/admin">

@@ -11,6 +11,7 @@
         crossorigin="anonymous">
     </head>
     <body>
+    
         <div class="container">
 
         <div class="row">
@@ -20,7 +21,7 @@
         </div>
         <div class="col-10">
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary btn-sm fl oat-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Tambah data
 </button>
 

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Peduli Diri - </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -44,9 +44,11 @@
   <!-- ======= Header ======= -->
   @include('layout.navbar')
 
+  @include('layout.sidebar')
+
   <!-- ======= Sidebar ======= -->
   
-  <main id="main" class="main">
+  <main id="main" class="main ">
   
   @yield('content')
 </main>

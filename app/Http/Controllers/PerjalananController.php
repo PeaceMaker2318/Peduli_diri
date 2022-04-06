@@ -34,4 +34,5 @@ class PerjalananController extends Controller
 
         return redirect('/perjalanan');
     }
+    
 }

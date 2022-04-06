@@ -18,6 +18,7 @@
 				<th>No</th>
 				<th>nik</th>
 				<th>Nama</th>
+				<th>Pangkat</th>
 				<th>Email</th>
 				<th>Alamat</th>
 				<th>Telepon</th>
@@ -30,6 +31,7 @@
 				<td>{{ $i++ }}</td>
 				<td>{{$p->nik}}</td>
 				<td>{{$p->name}}</td>
+				<td>{{$p->role}}</td>
 				<td>{{$p->email}}</td>
 				<td>{{$p->alamat}}</td>
 				<td>{{$p->no_telp}}</td>

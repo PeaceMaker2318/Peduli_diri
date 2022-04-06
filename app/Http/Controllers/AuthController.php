@@ -17,7 +17,7 @@ public function home()
     public function login(){
         
         
-        return view('auth.login');
+        return view('auth.index');
     }
     public function postlogin(Request $request ){
         
@@ -55,7 +55,7 @@ public function home()
             'password' => bcrypt($request->password),
             'remember_token' => str_random(60)
         ]);
-        return redirect('/login');
+        return redirect('/');
     }
 }
 

@@ -9,8 +9,13 @@
     
 <div class="card">
   <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-    <img src="{{asset ('foto/'.Auth::user()->foto)}}" alt="Profile" class="rounded-circle">
+    
+    @if(Auth::user()->foto == '')
+    <img src="{{asset ('foto/default.jpg')}}" alt="Profile" class="rounded-circle">
+    
+    @else
+    <img height="100px" width="100px" src="{{asset ('foto/'.Auth::user()->f )}}" alt="Profile" class="rounded-circle">
+    @endif
     <h2>{{Auth()->user()->name}}</h2>
     <h3>Perjalanan</h3>
    
@@ -199,12 +204,12 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
-
+                  <form method="post" action="/changepassword/{{ Auth::user()->id }}"  >
+@csrf
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input name="currentpassword" type="password" class="form-control" id="currentPassword">
                       </div>
                     </div>
 
@@ -215,13 +220,7 @@
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                      </div>
-                    </div>
-
+       
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Change Password</button>
                     </div>
